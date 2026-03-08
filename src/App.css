@@ -346,23 +346,19 @@ body {
   left: 50%;
   z-index: 100;
 
-  /* TWEAK: menu size */
-  width: min(440px, 90vw);
-  max-height: 90vh;
+  /* TWEAK: menu size – maintain chalkboard aspect ratio (~0.62:1) */
+  width: min(500px, 88vw);
+  aspect-ratio: 394 / 634;
+  max-height: 92vh;
 
-  /* Arch shape */
-  border-radius: 220px 220px 18px 18px;
+  /* Let the image provide the arch shape */
+  border-radius: 0;
 
   /* TWEAK: colors */
-  background: #2c4a38;
+  background: url('/menu-board.png') center / 100% 100% no-repeat;
   color: #f2ede4;
-  padding: 3.5rem 2.8rem 2.5rem;
+  padding: 9rem 5rem 2.5rem;
   overflow-y: auto;
-
-  box-shadow:
-    0 16px 56px rgba(20, 15, 10, 0.5),
-    0 2px 8px rgba(20, 15, 10, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 
   /* closed */
   opacity: 0;
@@ -416,7 +412,7 @@ body {
 /* --- Heading --- */
 .menu-board__heading {
   font-family: 'Gamja Flower', cursive;
-  font-size: clamp(1.8rem, 4.5vw, 2.4rem);
+  font-size: clamp(1.4rem, 3.5vw, 1.8rem);
   font-weight: 400;
   text-align: center;
   letter-spacing: -0.01em;
@@ -425,7 +421,7 @@ body {
 }
 
 .menu-board__divider {
-  width: 55%;
+  width: 40%;
   height: 1.5px;
   background: rgba(242, 237, 228, 0.2);
   margin: 0.5rem auto 1.1rem;
@@ -439,7 +435,7 @@ body {
 
 .menu-board__section-title {
   font-family: 'Gamja Flower', cursive;
-  font-size: clamp(0.95rem, 2.2vw, 1.2rem);
+  font-size: clamp(0.78rem, 1.8vw, 0.92rem);
   font-weight: 600;
   color: #e8c4a0;
   letter-spacing: 0.08em;
@@ -474,14 +470,14 @@ body {
 
 .menu-board__item-label {
   font-family: 'Gamja Flower', cursive;
-  font-size: clamp(0.88rem, 1.9vw, 1.08rem);
+  font-size: clamp(0.75rem, 1.7vw, 0.88rem);
   letter-spacing: 0.04em;
   white-space: nowrap;
 }
 
 .menu-board__item-desc {
   font-family: 'Gamja Flower', cursive;
-  font-size: clamp(0.68rem, 1.4vw, 0.82rem);
+  font-size: clamp(0.65rem, 1.3vw, 0.78rem);
   color: rgba(242, 237, 228, 0.45);
   text-align: right;
   flex-shrink: 1;
@@ -490,7 +486,7 @@ body {
 /* --- Footer --- */
 .menu-board__footer {
   font-family: 'Gamja Flower', cursive;
-  font-size: clamp(0.72rem, 1.4vw, 0.88rem);
+  font-size: clamp(0.65rem, 1.3vw, 0.78rem);
   color: rgba(242, 237, 228, 0.35);
   text-align: center;
   margin-top: 1rem;
@@ -551,7 +547,7 @@ body {
 
   .menu-board {
     width: 92vw;
-    padding: 2.5rem 1.5rem 1.5rem;
-    border-radius: 140px 140px 14px 14px;
+    padding: 3.5rem 2rem 2rem;
+    border-radius: 0;
   }
 }

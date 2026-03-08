@@ -32,14 +32,6 @@ const MENU_SECTIONS = [
 
 export default function MenuBoard({ isOpen, onClose }) {
   const panelRef = useRef(null)
-  const closeRef = useRef(null)
-
-  // Focus close button when opening
-  useEffect(() => {
-    if (isOpen && closeRef.current) {
-      closeRef.current.focus()
-    }
-  }, [isOpen])
 
   // Trap focus inside panel
   useEffect(() => {
@@ -76,16 +68,7 @@ export default function MenuBoard({ isOpen, onClose }) {
       aria-label="Site navigation"
       aria-hidden={!isOpen}
     >
-      <button
-        ref={closeRef}
-        className="menu-board__close"
-        onClick={onClose}
-        aria-label="Close menu"
-      >
-        &times;
-      </button>
-
-      <h2 className="menu-board__heading">Policy Cafe</h2>
+      <h2 className="menu-board__heading">Isa's Policy Cafe</h2>
       <div className="menu-board__divider" />
 
       {MENU_SECTIONS.map((section) => (
